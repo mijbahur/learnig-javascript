@@ -61,7 +61,7 @@ console.log(user.hasOwnProperty('userFullName')); // false
 console.log(user.fullName.hasOwnProperty('userFullName')); // true
 
 
-console.log("------------------------------- de-structure -----------------------------------");
+console.log("------------------------------- de-structure --------------------------------");
 
 
 let {userFullName: name} = user.fullName // user.fullName.userFullName => will treate as name
