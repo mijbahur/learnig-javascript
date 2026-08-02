@@ -91,3 +91,8 @@ let score1 = 4
 let score2 = 5
 let score3 = 6
 console.log(Array.of(team, score1, score2, score3)); // [ [ 'Real Madrid', 'Bercelona', 'Mancity' ], 4, 5, 6 ]
+
+function sum(num1, num2, num3, ...restNumber) {
+    console.log(`Rest Number: ${restNumber}`); //Rest Number: 12,3,5,64,32,2,12
+}
+sum(2, 3, 4, 12, 3, 5, 64, 32, 2, 12)
