@@ -30,5 +30,25 @@ const shoppingCart = [
 let totalPrice = shoppingCart.reduce( (acc, item) => acc + item.price, 0);
 console.log(totalPrice);
 
+function topRatedRestaurant(restaurants) {
+    if (!Array.isArray(restaurants) || restaurants.length === 0) {
+        return "Invalid";
+    }
+
+    const bestRatedResturent = restaurants.reduce((max, current) => {
+        return current.rating > max.rating ? current : max;
+    });
+
+    return bestRatedResturent.name.toUpperCase();
+}
+console.log(
+    topRatedRestaurant([
+        { name: "KFC", rating: 4.2 },
+        { name: "Pizza Hut", rating: 5.6 },
+        { name: "Chillox", rating: -4.5 },
+        { name: "Sultan's Dine", rating: 7.8 },
+    ]),
+); // SULTAN'S DINE
+
 
 //used for shoping cart, Calulating total shoping cost, etc.

@@ -1,3 +1,5 @@
+// filter out element and create new array based on condition
+// if not match return empty array. []
 let numbers = [2, 4, 6, 5, 8, 89, 8];
 
 let filteredNum = numbers.filter( (num) => {
@@ -31,5 +33,22 @@ userBooks = books.filter( (bk) => {return (bk.publish >= 1995 && bk.genre === "H
 // [
 //     { title: 'Book Three', genre: 'History', publish: 1999, edition: 2007 }
 // ]
-
 console.log(userBooks);
+
+// Removing falsy/invalid values
+const values = [0, "hello", null, undefined, "world", false, 42];
+const clean = values.filter(Boolean); // ["hello", "world", 42]
+
+// Filtering by condition + combined with .map()
+const students = [
+    { name: "Hacin", marks: 95 },
+    { name: "Tanvir", marks: 60 },
+    { name: "Rafi", marks: 85 },
+];
+const topStudentNames = students
+    .filter((s) => s.marks >= 80)
+    .map((s) => s.name);
+// ["Hacin", "Rafi"]
+
+//find() return the first element of match case. if not matches return undefined.
+let userBook = books.find((bk) => bk.genre === "History")
