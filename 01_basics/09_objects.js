@@ -18,6 +18,11 @@ console.log(FootballTeam["name"]);
 // console.log(FootballTeam.country); // country can not be accessed through dot
 console.log(FootballTeam["country"]);
 
+//** what will happen if we want to access a undeclared keys from an object?
+//compiler will give an error. so we call it as optional 
+// Errors when accessing properties of null or undefined */
+console.log(FootballTeam?.player?.name, FootballTeam?.Laliga?.year); //undefined undefined
+
 
 
 let myObj = {
@@ -26,8 +31,15 @@ let myObj = {
 }
 console.log(myObj[mySym]); // this syntax is mandatory for symbol
 
+// Object.seal(FootballTeam); //Add and delete is not allowed but edit is allowed
+// delete FootballTeam.UCL;// can't possible
+// FootballTeam.UCL = 16; // possible. valur will be updated
+
 
 FootballTeam.name = "Real Madrid FC"
+
+
+//**in freez add, delete, edit nothing possible. main object will not change */
 // Object.freeze(FootballTeam) // it will freeze the object modification
 // FootballTeam.name = "Barcelona" // name will not change if Object is freezed
 console.log(FootballTeam);
